@@ -1,0 +1,119 @@
+﻿```cshtml
+@model ProductCatalogMVC.Models.Product
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .details-box {
+            width: 600px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .product-image {
+            display: block;
+            width: 300px;
+            height: 300px;
+            object-fit: contain;
+            margin: 0 auto 25px auto;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: white;
+        }
+
+        .item {
+            margin: 15px 0;
+            font-size: 18px;
+        }
+
+            .item strong {
+                display: inline-block;
+                width: 130px;
+            }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            background-color: #333;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .back-btn:hover {
+                background-color: #555;
+            }
+    </style>
+</head>
+
+<body>
+
+    <div class="details-box">
+
+        <h1>Product Details</h1>
+
+        <!-- Product Image -->
+        <img class="product-image"
+             src="@Url.Content(Model.ImageUrl)"
+             alt="@Model.ProductName" />
+
+        <div class="item">
+            <strong>Product ID:</strong>
+            @Model.ProductId
+        </div>
+
+        <div class="item">
+            <strong>Name:</strong>
+            @Model.ProductName
+        </div>
+
+        <div class="item">
+            <strong>Description:</strong>
+            @Model.Description
+        </div>
+
+        <div class="item">
+            <strong>Price:</strong>
+            ₹@Model.Price
+        </div>
+
+        <div class="item">
+            <strong>Category:</strong>
+            @Model.Category
+        </div>
+
+        <div class="item">
+            <strong>Quantity:</strong>
+            @Model.Quantity
+        </div>
+
+        <a class="back-btn"
+           href="@Url.Action("Index", "Product")">
+            ← Back to Products
+        </a>
+
+    </div>
+
+</body>
+</html>
+```
